@@ -1,14 +1,14 @@
 const async = require('async');
-const Section = require('../model/section');
+const Paper = require('../model/paper');
 
-class SectionController {
+class PaperController {
   getAll(req, res, next) {
     async.series({
       items: (cb) => {
-        Section.find({}, cb);
+        Paper.find({}, cb);
       },
       totalCount: (cb) => {
-        Section.count(cb);
+        Paper.count(cb);
       }
     }, (err, result) => {
       if (err) {
@@ -20,8 +20,8 @@ class SectionController {
   }
 
   getOne(req, res, next) {
-    const sectionId = req.params.sectionId;
-    Section.findById(sectionId, (err, doc) => {
+    const paperId = req.params.paperId;
+    Paper.findById(paperId, (err, doc) => {
       if (err) {
         return next(err);
       }
@@ -33,8 +33,8 @@ class SectionController {
   }
 
   delete(req, res, next) {
-    const sectionId = req.params.sectionId;
-    Section.findOneAndRemove({'_id': sectionId}, (err, doc) => {
+    const paperId = req.params.paperId;
+    Paper.findOneAndRemove({'_id': paperId}, (err, doc) => {
       if (err) {
         return next(err);
       }
@@ -46,8 +46,8 @@ class SectionController {
   }
 
   update(req, res, next) {
-    const sectionId = req.params.sectionId;
-    Section.findOneAndUpdate({'_id': sectionId}, req.body, (err, doc) => {
+    const paperId = req.params.paperId;
+    Paper.findOneAndUpdate({'_id': paperId}, req.body, (err, doc) => {
       if (err) {
         return next(err);
       }
@@ -59,7 +59,7 @@ class SectionController {
   }
 
   create(req, res, next) {
-    Section.create(req.body, (err, doc) => {
+    Paper.create(req.body, (err, doc) => {
       if (err) {
         return next(err);
       }
@@ -68,4 +68,4 @@ class SectionController {
   }
 }
 
-module.exports = SectionController;
+module.exports = PaperController;

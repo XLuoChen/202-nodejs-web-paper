@@ -29,7 +29,7 @@ module.exports = {
     _id: '587f0f2586653d19297d40c8',
     sections: [{
       _id: '587f0f2586653d19297d40c37',
-      section: '587f0f2586653d19297d40c6',
+      section: '587f0f2586653d19297d40c6'
     }]
   }]
 };
