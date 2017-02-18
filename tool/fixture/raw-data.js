@@ -15,14 +15,14 @@ module.exports = {
       _id: '587f0f2586653d19297d40c35',
       homework: '587f0f2586653d19297d40c2',
       count: 1
-    }, {
-      _id: '587f0f2586653d19297d40c7',
-      type: 'homeworkQuiz',
-      homeworks: [{
-        _id: '587f0f2586653d19297d40c36',
-        homework: '587f0f2586653d19297d40c3',
-        count: 2
-      }]
+    }]
+  }, {
+    _id: '587f0f2586653d19297d40c7',
+    type: 'homeworkQuiz',
+    homeworks: [{
+      _id: '587f0f2586653d19297d40c36',
+      homework: '587f0f2586653d19297d40c3',
+      count: 2
     }]
   }],
   Paper: [{

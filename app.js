@@ -3,6 +3,8 @@ const express = require('express');
 const config = require('config');
 const router = require('./router');
 
+const bodyParser = require('body-parser');
+
 mongoose.connect(config.get('mongoUri'));
 
 const app = express();
@@ -12,6 +14,8 @@ app.get('/', (req, res)=> {
         'hello': 'world'
     })
 });
+
+app.use(bodyParser.json());
 
 router(app);
 
